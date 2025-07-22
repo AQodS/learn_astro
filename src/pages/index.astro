@@ -1,9 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Greeting from "../components/Greeting";
 
 const pageTitle = "Home Page";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <h2>Welcome to My Astro Site</h2>
+  <!-- this is not astro island -->
+  <Greeting messages={["Hi", "Hello", "Howdy", "Hey there"]} />
+  <!-- this is astro island -->
+  <Greeting client:load messages={["Hi", "Hello", "Howdy", "Hey there"]} />
+  <!-- astro island allows you to use components from other libraries such as react, vue, svelte, etc -->
 </BaseLayout>
